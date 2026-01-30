@@ -1,0 +1,10 @@
+.pokemon-card__image {
+  position: relative;
+  height: 180px;
+  width: 100%;
+}
+.pokemon-card__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

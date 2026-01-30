@@ -1,0 +1,226 @@
+/* =========================
+   Global Reset & Defaults
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #0f172a; /* deep slate */
+  color: #e5e7eb;            /* soft light gray */
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Inter,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f8fafc; /* slightly brighter */
+  margin: 0 0 0.5em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 0.9rem; }
+p, li { font-size: 0.95rem; }
+
+p {
+  margin: 0 0 1em;
+  color: #cbd5f5; /* softer than body text */
+}
+
+a {
+  color: #60a5fa; /* calm blue */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #93c5fd;
+}
+
+/* =========================
+   Layout Helpers
+   ========================= */
+
+main {
+  padding: 1.25rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+/* =========================
+   Navbar Base
+   ========================= */
+
+.navbar {
+  background-color: #020617; /* darker than body */
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #f8fafc;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: #cbd5f5;
+}
+
+.navbar-link:hover {
+  color: #f8fafc;
+}
+
+/* =========================
+   Cards / Sections
+   ========================= */
+
+.section {
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+button,
+.button {
+  background-color: #1e40af;
+  color: #f8fafc;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: #1d4ed8;
+}
+
+button:active,
+.button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   Selection & Scrollbar
+   ========================= */
+
+::selection {
+  background: #2563eb;
+  color: #f8fafc;
+  /* ===== Global Text Inputs ===== */
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+
+    padding: 12px 18px;
+    border-radius: 999px; /* pill shape */
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    outline: none;
+    transition:
+      border-color 160ms ease,
+      background 160ms ease,
+      box-shadow 160ms ease,
+      transform 120ms ease;
+  }
+
+  /* Placeholder */
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  /* Hover */
+  input:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+
+
+  /* Remove ugly autofill background (Chrome) */
+  input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* Optional – WebKit scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+:root {
+  --nav-h: 72px;
+}
+
+html {
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+}
+
+section[whoami] {
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+  scroll-behavior: smooth; /* optional */
+}

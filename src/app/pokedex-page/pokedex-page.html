@@ -1,0 +1,28 @@
+<header class="pokedex-header">
+  <h1 class="pokedex-title">Pokédex</h1>
+
+  <p>{{filter()}}</p>
+
+  <div class="pokedex-search">
+    <input
+      [(ngModel)]="filter"
+      type="text"
+      placeholder="Search Pokémon by name…"
+      aria-label="Search Pokémon by name"
+    />
+  </div>
+</header>
+@if (pokemonsResource.isLoading()) {
+  <p class="loading">Loading Pokémon…</p>
+}
+
+@if (pokemonsResource.hasValue()) {
+  <section class="pokedex">
+    @for (pokemon of filteredPokemons(); track pokemon.id) {
+      <app-pokemon-card
+        class="pokedex-card"
+        [pokemonUrl]="pokemon.url"
+      />
+    }
+  </section>
+}

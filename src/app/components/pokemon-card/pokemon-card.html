@@ -1,0 +1,25 @@
+<div class="pokemon-card">
+  @if (pokemonResource.isLoading()) {
+    <div class="pokemon-card__loading">
+      Loading…
+    </div>
+  }
+
+  @if (pokemonResource.hasValue()) {
+    <div class="pokemon-card__image">
+      @if (pokemonImage()) {
+        <img
+          [ngSrc]="pokemonImage()!"
+          alt="{{ pokemonName() }}"
+          fill
+          sizes="(min-width: 768px) 20vw, 40vw"
+        />      }
+    </div>
+
+    <div class="pokemon-card__content">
+      <h3 class="pokemon-card__name">
+        {{ pokemonName() }}
+      </h3>
+    </div>
+  }
+</div>
